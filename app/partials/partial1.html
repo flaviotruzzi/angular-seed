@@ -1,1 +1,34 @@
-<p>This is the partial for view 1.</p>
+<h3>Gastos Totais</h3>
+
+<div class="container-fluid">
+  <div class="span6">
+    <!-- searchSize  -->
+    <input type="text" placeholder="Nome ou Partido" class="input-medium search-query" ng-model="query">
+
+    <table class="table table-striped tableSize">  
+      <thead>  
+        <tr>  
+        	<th width="1%"><i class="icon-ok"></i></th>
+          <th width="90%">Senador</th>  
+          <th width="9%">Partido</th>              
+        </tr>  
+      </thead>  
+      <tbody>  
+        <tr ng-repeat="senator in senadores | filter: query">  
+        	<td><input ng-click="pRsenator(senator)" type="checkbox" ng-model="senator.selected"></td>
+          <td>{{senator.name}}</td>  
+          <td>{{senator.partido}}</td>              
+        </tr>           
+      </tbody>  
+    </table>       
+  </div>
+  <div class="span6" ng-show="showPlot" ng-controller="chartCtrl">
+
+    <div  id="chart_div"></div>
+    <div mychart config="chartConfig" filtered="filtered"></div>
+  </div>
+</div>
+
+
+
+</html>  

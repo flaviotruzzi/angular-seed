@@ -3,17 +3,38 @@
 <head>
   <meta charset="utf-8">
   <title>My AngularJS App</title>
-  <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>  
+  <!-- <link rel="stylesheet" href="css/bootstrap-responsive.css"/>   -->
+  <link rel="stylesheet" href="css/animation.css"/>  
+  <link rel="stylesheet" href="css/fontello.css"/>  
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
+<div class="container-fluid navBackground row-fluid"> 
+      <!--Sidebar content-->        
+        <div class="span1 btn-toolbar btn-group btn-group-vertical" ng-controller="navController">   
+          
+            <a title="Gastos Totais" ng-class="getNav('/view1')" class="btn btn-inverse btn-large" href="#/view1"><i class="icon-money"></i></a>
 
-  <div ng-view></div>
+            <a title="Aluguel de imóveis para escritórios políticos, compreendendo despesas concernentes a eles." ng-class="getNav('/view2')" class="btn btn-large btn-inverse" href="#/view2"><i class="icon-home"></i></a>
 
-  <div>Angular seed app: v<span app-version></span></div>
+            <a title="Passagens aéreas, aquíferas e terrestres nacionais." ng-class="getNav('#/view3')" href="#/view3" class="btn btn-inverse btn-large"><i class="icon-white icon-flight"></i></a>
+
+            <a title="Divulgação da atividade parlamentar" ng-class="getNav('/view4')" href="#/view4" class="btn btn-inverse btn-large"><i class="icon-white icon-megaphone"></i></a>
+
+            <a title="Locomoção, hospedagem, alimentação, combustíveis e lubrificantes." ng-class="getNav('/view5')" href="#/view5" class="btn btn-inverse btn-large"><i class="icon-white icon-food"></i></a>
+
+            <a title="Aquisição de material de consumo para uso no escritório político, inclusive aquisições ou locações de software, despesas postais, aquisição de publicações, locação de móveis e de equipamentos." ng-class="getNav('/view6')" href="#/view6" class="btn btn-inverse btn-large"><i class="icon-white icon-attach"></i></a>
+
+            <a title="Contratação de consultorias, assessorias, pesquisas, trabalhos técnicos e outros serviços de apoio ao exercício do mandato parlamentar" ng-class="getNav('/view7')" href="#/view7" class="btn btn-inverse btn-large"><i class="icon-white icon-chart-pie"></i></a>     
+
+      </div>
+    <div class="navBackground">
+      <!--Body content-->    
+      <div class="control-group" ></div>
+      <div ng-controller="senatorController" class="contentBackground" ng-view></div>
+    </div>
+  </div>
+<!--</div>-->
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
@@ -23,6 +44,12 @@
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
-  <script src="js/directives.js"></script>
+  <script src="js/directives.js"></script>      
+  <script src="http://www.google.com/jsapi"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    google.load('visualization', '1.0', {'packages':['corechart']});
+  </script>
+  <!-- <script src="js/bootstrap.js"></script> -->
 </body>
 </html>
