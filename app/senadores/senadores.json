@@ -1,0 +1,20 @@
+[
+	{
+		"name" : "Teste Senador 1",
+		"partido" : "PSDB",
+		"selected" : false,
+		"id" : 1
+	},
+	{
+		"name" : "Teste Senador 2",
+		"partido" : "PT",
+		"selected" : false,
+		"id" : 2
+	},
+	{
+		"name" : "Teste Senador 3",
+		"partido" : "PMDB",
+		"selected" : false,
+		"id" : 3
+	}		
+]
